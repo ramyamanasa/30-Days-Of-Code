@@ -1,0 +1,41 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <bits/stdc++.h>
+#include <unordered_map>
+
+using namespace std;
+
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */  
+    int n;
+    cin>>n;
+    
+    //map
+    unordered_map<string, string>phone_book;
+    
+    for(int i=0; i<n; i++){
+        string name, phone_number;
+        cin>>name>>phone_number;
+        phone_book[name] = phone_number;
+    }
+    
+    string query;
+    
+    while(cin>> query){
+        auto it= phone_book.find(query);
+        
+        if(it != phone_book.end()){
+            cout<<it->first<<"="<<it->second<<endl;
+        }
+        
+        else {
+            cout<<"Not found"<<endl;
+        }
+    }
+    
+    return 0;
+}
