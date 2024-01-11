@@ -1,0 +1,34 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+    int T;
+    cin>>T;
+    string S;
+    
+    while(T--) {
+        cin>>S;
+        string evenindex, oddindex;
+        
+        for(int i=0; i<S.size(); i++) {
+            
+            if (i % 2 == 0) {
+                evenindex.push_back(S[i]);
+            } 
+            
+            else {
+                oddindex.push_back(S[i]);
+            }
+        }
+        cout<<evenindex<<" "<<oddindex<<endl;
+    }  
+    
+    
+    return 0;
+}
