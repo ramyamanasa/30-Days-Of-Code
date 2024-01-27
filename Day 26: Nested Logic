@@ -1,0 +1,26 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    int returnedDay, returnedMonth, returnedYear;
+    int dueDay, dueMonth, dueYear;
+
+    cin >> returnedDay >> returnedMonth >> returnedYear;
+    cin >> dueDay >> dueMonth >> dueYear;
+
+    int fine = 0;
+
+    if (returnedYear > dueYear || (returnedYear == dueYear && returnedMonth > dueMonth) || (returnedYear == dueYear && returnedMonth == dueMonth && returnedDay > dueDay)) {
+        fine = (returnedYear == dueYear) ? 
+            (returnedMonth == dueMonth) ? 15 * (returnedDay - dueDay) : 500 * (returnedMonth - dueMonth) : 10000;
+    }
+
+    cout << fine << endl;
+
+    return 0;
+}
